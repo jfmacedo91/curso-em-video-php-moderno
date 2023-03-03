@@ -65,3 +65,11 @@ input:focus {
 [type="submit"]:hover {
   background-color: #3b216d;
 }
+
+p {
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  color: #EAEAEA;
+  background-color: #FFFFFF20;
+  text-shadow: 0 2px 2px #121214;
+}

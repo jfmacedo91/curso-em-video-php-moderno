@@ -13,14 +13,16 @@
   <main>
     <div class="result">
       <?php
-        $date = date("m-d-Y");
-        $response = json_decode(file_get_contents('https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao=%27'.$date.'%27&$top=100&$format=json&$select=cotacaoCompra'));
-        $price = $response->value[0]->cotacaoCompra;
-        $reais = $_GET['number'] ?? 0;
+        date_default_timezone_set("America/Sao_Paulo");
+        $initialDate = date("m-d-Y", strtotime("-7 days"));
+        $finalDate = date("m-d-Y");
+        $url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial=\''.$initialDate.'\'&@dataFinalCotacao=\''.$finalDate.'\'&$top=1&$orderby=dataHoraCotacao%20desc&$format=json&$select=cotacaoCompra';
+        $response = json_decode(file_get_contents($url), true);
+        $price = $response['value'][0]['cotacaoCompra'];
+        $reais = $_REQUEST['number'] ?? 0;
         $dollars = $reais / $price;
-        $formattedReal = number_format($reais, 2, ',', '.');
-        $formattedDollars = number_format($dollars, 2, ',', '.');
-        echo "<p>Seus R$ $formattedReal equivalem a <strong>US$ $formattedDollars</strong></p>";
+        $pattern = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
+        echo "<p>Seus ".numfmt_format_currency($pattern, $reais, "BRL")." equivalem a <strong>".numfmt_format_currency($pattern, $dollars, "USD")."</strong></p>";
         echo "<p>*Cotação obtida diretamente do site do <a href='https://www.bcb.gov.br'>Banco Central do Brasil</a>.</p>";
       ?>
       <a class="btn" href="index.html"><?= "\u{2B05}" ?> Voltar</a>

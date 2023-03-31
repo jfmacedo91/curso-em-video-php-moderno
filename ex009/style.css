@@ -11,48 +11,54 @@
   font-size: 62.5%;
 }
 
+a {
+  font-weight: 700;
+  text-decoration: none;
+  color: #9635F8;
+}
+
 body {
   display: grid;
   place-content: center;
   min-height: 100vh;
   font-size: 1.6rem;
-  background: linear-gradient(135deg, #4D7EA8, #9E90A2);
+  background: linear-gradient(245deg, #022C17 -100%, #17022C 200%);;
 }
 
 h1 {
   margin-bottom: 2rem;
   font-weight: 700;
   text-align: center;
-  color: #272932;
+  color: #F9FAFB;
 }
 
 form {
   display: flex;
   flex-direction: column;
   padding: 4rem;
-  border: 1px solid #27293280;
+  border: 1px solid #272E35;
   border-radius: 1.2rem;
-  background-color: #B6C2D980;
+  background-color: #101418;
 }
 
 label {
   padding: 0.5rem 1rem;
   font-size: 1.4rem;
-  border: 1px solid #27293280;
+  border: 1px solid #272E35;
   border-radius: 0.5rem 0.5rem 0 0;
   border-bottom: none;
-  color: #272932;
-  background-color: #9E90A2;
+  color: #101418;
+  background-color: #058F4A;
 }
 
 input {
   min-width: 30rem;
   padding: 1rem;
   font-size: 1.6rem;
-  border: 1px solid #27293280;
+  border: 1px solid #272E35;
   border-radius: 0 0 0.5rem 0.5rem;
-  color: #272932;
-  background-color: #B6C2D980;
+  color: #F9FAFB;
+  background-color: #272E35;
 }
 
 input + label {
@@ -60,7 +66,7 @@ input + label {
 }
 
 input:focus {
-  background-color: #B6C2D9;
+  background-color: #272E3580;
   outline: none;
 }
 
@@ -74,10 +80,10 @@ input:focus {
   font-weight: 600;
   text-transform: uppercase;
   text-decoration: none;
-  border: 1px solid #27293280;
+  border: 1px solid #272E35;
   border-radius: 0.5rem;
-  color: #272932;
-  background-color: #4D7EA8;
+  color: #101418;
+  background-color: #058F4A;
   cursor: pointer;
   transition: 200ms;
 }
@@ -90,9 +96,10 @@ input:focus {
   display: flex;
   flex-direction: column;
   padding: 4rem;
-  border: 1px solid #27293280;
+  border: 1px solid #272E35;
   border-radius: 1.2rem;
-  background-color: #B6C2D980;
+  color: #F9FAFB;
+  background-color: #101418;
 }
 
 p {

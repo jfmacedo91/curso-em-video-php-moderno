@@ -14,16 +14,13 @@
     <div class="result">
       <?php
         $number = $_GET['number'];
-        $number = number_format($number, 3, '.', '');
-        [$integerPart, $fractionalPart]= explode('.', $number);
-        $formattedNumber = number_format($number, 3, ',', '.');
-        $formattedIntegerPart = number_format($integerPart, 0, ',', '.');
-        $formattedFractionalPart = number_format($fractionalPart / 1000, 3, ',', '.');
+        $integerPart = (int) $number;
+        $fractionalPart = $number - $integerPart;
       ?>
-      <p>Analisando o número <strong><?= $formattedNumber; ?></strong> informado pelo usuário:</p>
+      <p>Analisando o número <strong><?= number_format($number, 3, ',', '.'); ?></strong> informado pelo usuário:</p>
       <ul>
-        <li>A parte inteira do número é <strong><?= $formattedIntegerPart; ?></strong></li>
-        <li>A parte fracionária do número é <strong><?= $formattedFractionalPart; ?></strong></li>
+        <li>A parte inteira do número é <strong><?= number_format($integerPart, 0, ',', '.'); ?></strong></li>
+        <li>A parte fracionária do número é <strong><?= number_format($fractionalPart, 3, ',', '.'); ?></strong></li>
       </ul>
       <a class="btn" href="index.html"><?= "\u{2B05}" ?> Voltar</a>
     </div>

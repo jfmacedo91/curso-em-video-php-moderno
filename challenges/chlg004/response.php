@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="../../css/style.css">
   <title>Conversor de moedas v2.0</title>
 </head>
 <body>
@@ -25,7 +25,9 @@
         echo "<p>Seus ".numfmt_format_currency($pattern, $reais, "BRL")." equivalem a <strong>".numfmt_format_currency($pattern, $dollars, "USD")."</strong></p>";
         echo "<p>*Cotação obtida diretamente do site do <a href='https://www.bcb.gov.br'>Banco Central do Brasil</a>.</p>";
       ?>
-      <a class="btn" href="index.html"><?= "\u{2B05}" ?> Voltar</a>
+      <button class="btn" onclick="javascript:history.go(-1)">
+        <?= "\u{2B05}" ?> Voltar
+      </button>
     </div>
   </main>
 </body>

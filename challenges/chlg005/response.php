@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="../../css/style.css">
   <title>Analisador de número real</title>
 </head>
 <body>
@@ -22,7 +22,9 @@
         <li>A parte inteira do número é <strong><?= number_format($integerPart, 0, ',', '.'); ?></strong></li>
         <li>A parte fracionária do número é <strong><?= number_format($fractionalPart, 3, ',', '.'); ?></strong></li>
       </ul>
-      <a class="btn" href="index.html"><?= "\u{2B05}" ?> Voltar</a>
+      <button class="btn" onclick="javascript:history.go(-1)">
+        <?= "\u{2B05}" ?> Voltar
+      </button>
     </div>
   </main>
 </body>

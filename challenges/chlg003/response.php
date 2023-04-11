@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="../../css/style.css">
   <title>Conversor de moedas v1.0</title>
 </head>
 <body>
@@ -20,7 +20,9 @@
         echo "<p>Seus R$ $reais equivalem a <strong>US$ $dollars</strong></p>";
         echo "<p>*<strong>Cotação fixa de R$ 5,29</strong> informada diretamente no código.</p>";
       ?>
-      <a class="btn" href="index.html"><?= "\u{2B05}" ?> Voltar</a>
+      <button class="btn" onclick="javascript:history.go(-1)">
+        <?= "\u{2B05}" ?> Voltar
+      </button>
     </div>
   </main>
 </body>

@@ -107,6 +107,10 @@ pre {
   overflow: auto;
 }
 
+p {
+  padding-block: 1rem;
+}
+
 .btn {
   display: flex;
   align-items: center;

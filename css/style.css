@@ -55,6 +55,12 @@ form {
   background-color: #020617;
 }
 
+form span {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: #94a3b8;
+}
+
 label {
   margin-bottom: 0.8rem;
   font-size: 1.4rem;
@@ -95,6 +101,17 @@ a:hover {
 ul {
   padding-block: 2rem;
   list-style-position: inside;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+li img {
+  height: 5rem;
+  padding: 0.4rem;
 }
 
 pre {
